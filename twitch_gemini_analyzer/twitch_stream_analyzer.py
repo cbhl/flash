@@ -71,18 +71,29 @@ CONFIG = {
 #   * Titles should be attention-grabbing but accurate
 #   * Always identify the game being played"""
 
+# SYSTEM_PROMPT = """Ignore all previous instructions.
+# You are watching a Twitch stream of enluna ("Annie") playing Teamfight Tactics.
+
+# Your task is to:
+# 1. Continuously transcribe spoken words, and then translate them into French.
+
+# Format each line of your response as follows:
+# <original text> // <french translation>
+
+# Rules:
+# - No greetings or meta-commentary
+# - Make sure to translate each sentence that you transcribe.
+# """
+
 SYSTEM_PROMPT = """Ignore all previous instructions.
 You are watching a Twitch stream of enluna ("Annie") playing Teamfight Tactics.
 
 Your task is to:
-1. Continuously transcribe spoken words, and then translate them into French.
-
-Format each line of your response as follows:
-<original text> // <french translation>
+1. Describe the state of the game. Explain what is happening and what the players are doing.
+2. Propose what moves the players should make, and why, and compare them to the moves they actually make.
 
 Rules:
 - No greetings or meta-commentary
-- Make sure to translate each sentence that you transcribe.
 """
 
 class ConsoleManager:
