@@ -1,0 +1,60 @@
+# Plan for Twitch Stream Analysis with Gemini 2.0 Flash
+
+1. Environment Setup ✓
+- Install Python 3.11 (for better library compatibility) 
+- Create .env file for GOOGLE_API_KEY 
+- Initialize poetry project with Python 3.11 
+- Add dependencies: 
+  * google-generativeai 
+  * python-dotenv 
+  * streamlink 
+  * typer 
+  * opencv-python 
+  * numpy 
+  * sounddevice 
+  * scipy 
+  * websockets ✓
+  * ffmpeg-python ✓
+  * Pillow ✓
+  * taskgroup 
+  * exceptiongroup 
+
+2. Code Organization ✓
+- Review existing live_api_starter.py 
+- Create new script twitch_stream_analyzer.py with components: 
+  * Twitch stream handling (using streamlink) 
+  * Audio stream extraction and processing (In Progress)
+  * Video frame extraction and processing ✓
+  * Gemini API integration ✓
+  * CLI interface with typer ✓
+
+3. Implementation Steps
+a) Basic Setup ✓
+- Set up argument parsing with typer 
+- Implement streamlink integration 
+- Add proper error handling and logging 
+
+b) Video Processing ✓
+- Extract video stream using streamlink 
+- Implement frame capture and processing 
+- Convert frames to correct format for Gemini API 
+
+c) Audio Processing (Next Priority)
+- Extract audio stream using streamlink
+- Process audio stream using ffmpeg-python
+- Convert audio to PCM format (16kHz, mono)
+- Implement audio buffering and streaming
+- Add proper error handling for audio processing
+
+d) Gemini Integration (In Progress)
+- Implement websocket streaming with Gemini API ✓
+- Handle both audio and video streams
+- Add proper error handling and logging ✓
+- Add system prompt for stream analysis ✓
+
+4. Testing and Refinement
+- Test with different Twitch streams
+- Monitor memory usage and performance
+- Add rate limiting for API calls
+- Implement graceful shutdown
+- Add documentation and usage examples
